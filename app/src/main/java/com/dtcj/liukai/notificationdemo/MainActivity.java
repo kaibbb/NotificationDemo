@@ -15,15 +15,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Intent intent = new Intent(this, PushService.class);
         startService(intent);
-        setTitle("MainActivity");
+
         Bundle bundle = getIntent().getBundleExtra(Constants.EXTRA_BUNDLE);
         if(bundle != null){
             String name = bundle.getString("name");
-            String price = bundle.getString("price");
+            String description = bundle.getString("description");
             String detail = bundle.getString("detail");
-            SystemUtils.startDetailActivity(this, name, price, detail);
+            Intent i = new Intent(this, DetailActivity.class);
+            i.putExtra("name", name);
+            i.putExtra("description", description);
+            i.putExtra("detail", detail);
+            startActivity(i);
             Log.i(TAG, "launchParam exists, redirect to DetailActivity");
         }
     }

@@ -16,11 +16,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         getSupportActionBar().setTitle("DetailActivity");
         String name = getIntent().getStringExtra("name");
-        String price = getIntent().getStringExtra("price");
+        String description = getIntent().getStringExtra("description");
         String detail = getIntent().getStringExtra("detail");
 
         ((TextView)findViewById(R.id.name)).setText(name);
-        ((TextView)findViewById(R.id.price)).setText(price);
+        ((TextView)findViewById(R.id.description)).setText(description);
         ((TextView)findViewById(R.id.detail)).setText(detail);
     }
 }

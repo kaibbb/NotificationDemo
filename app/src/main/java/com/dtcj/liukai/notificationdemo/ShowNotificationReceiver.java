@@ -23,12 +23,11 @@ public class ShowNotificationReceiver extends BroadcastReceiver {
                 getBroadcast(context, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-        builder.setContentTitle("这就是通知的头")
-                .setTicker("这是通知的ticker")
+        builder.setContentTitle("notif head")
+                .setTicker("notif ticker")
                 .setContentIntent(pendingIntent)
-                .setSmallIcon(android.R.drawable.ic_lock_idle_charging);
+                .setSmallIcon(R.drawable.ic_dt);
 
-        Log.i("repeat", "showNotification");
         NotificationManager manager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(2, builder.build());
     }
