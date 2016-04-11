@@ -21,8 +21,8 @@ public class NotificationReceiver extends BroadcastReceiver {
             mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             Intent detailIntent = new Intent(context, DetailActivity.class);
-            detailIntent.putExtra("name", "详情页");
-            detailIntent.putExtra("description", "这是一个详情页面");
+            detailIntent.putExtra("name", "当前app进程存在");
+            detailIntent.putExtra("description", "直接弹出详情页面");
             detailIntent.putExtra("detail", "这是app进程存在，直接启动Activity的");
 
             Intent[] intents = {mainIntent, detailIntent};
@@ -35,8 +35,8 @@ public class NotificationReceiver extends BroadcastReceiver {
             launchIntent.setFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
             Bundle args = new Bundle();
-            args.putString("name", "appName");
-            args.putString("description", "这是description");
+            args.putString("name", "当前app进程不存在");
+            args.putString("description", "先启动应用再启动Activity");
             args.putString("detail", "这是app进程不存在，先启动应用再启动Activity的");
             launchIntent.putExtra(Constants.EXTRA_BUNDLE, args);
             context.startActivity(launchIntent);

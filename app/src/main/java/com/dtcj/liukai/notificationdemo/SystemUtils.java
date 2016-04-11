@@ -12,9 +12,6 @@ import java.util.List;
  */
 public class SystemUtils {
 
-    /**
-     * 判断应用是否已经启动
-     */
     public static boolean isAppAlive(Context context, String packageName) {
         ActivityManager activityManager =
                 (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);

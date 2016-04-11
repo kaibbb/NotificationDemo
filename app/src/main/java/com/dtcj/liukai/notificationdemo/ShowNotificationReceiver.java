@@ -23,8 +23,8 @@ public class ShowNotificationReceiver extends BroadcastReceiver {
                 getBroadcast(context, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-        builder.setContentTitle("notif head")
-                .setTicker("notif ticker")
+        builder.setContentTitle("notification head")
+                .setTicker("notification ticker")
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.ic_dt);
 
